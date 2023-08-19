@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela principal</title>
+    <link rel="stylesheet" href="stylee.css" />
+  </head>
+  <body>
+    <section>
+        <h2 id="text">Veja os Eventos Aqui</h2>
+        <a href="./eventos/Eventos.html" id="btn">Eventos</a>
+    </section>
+    <header>
+        <a href="./index.html"><img src="check-logo2.png"style="max-width:110px"class="logo"></a>
+        <div class="group">
+        <ul class="navigation">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./projeto cadastro de produto/sobrenos.html">Sobre Nós</a></li>
+            <li><a href="./parte suporte/suporte.html">Suporte</a></li>
+            <li><a href="./projeto cadastro de produto/indexx.html">Seja Parceiro</a></li>
+            <a href="signin.html">
+                <button class="btnLogin-popup">Login</button>
+            </a>
+         </ul>
+         <div class="search">
+            <span class="icon">
+                <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+            </span>
+         </div>
+         <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+        </div>
+        <div class="searchBox">
+            <form id="searchForm">
+              <input type="text" placeholder="Search here..." id="searchInput">
+              <button type="submit">Search</button>
+        </div>
+    </header>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+    let searchBtn = document.querySelector('.searchBtn');
+    let closeBtn = document.querySelector('.closeBtn');
+    let searchBox = document.querySelector('.searchBox');
+    let navigation = document.querySelector('.navigation');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+    let searchForm = document.getElementById('searchForm');
+    let searchInput = document.getElementById('searchInput');
+    let section = document.querySelector('section');
+
+    searchBtn.onclick = function() {
+        searchBox.classList.add('active');
+        closeBtn.classList.add('active');
+        searchBtn.classList.add('active');
+        menuToggle.classList.add('hide');
+        header.classList.remove('open');
+        section.classList.toggle('active');
+    }
+    closeBtn.onclick = function() {
+        searchBox.classList.remove('active');
+        closeBtn.classList.remove('active');
+        searchBtn.classList.remove('active');
+        menuToggle.classList.remove('hide');
+    }
+    menuToggle.onclick = function(){
+        header.classList.toggle('open');
+        searchBox.classList.remove('active');
+        closeBtn.classList.remove('active');
+        searchBtn.classList.remove('active');
+        section.classList.toggle('hide');
+    }
+ </script>
+
+</body>
+</html>
+
+<script src="main.js"></script>
